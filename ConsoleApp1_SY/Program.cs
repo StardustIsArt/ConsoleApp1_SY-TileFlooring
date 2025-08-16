@@ -14,6 +14,7 @@ class Program
         //Verifying if user as an irregular flooring plan to purchase flooring for.
         Console.WriteLine("Do you have a irregular floor? Y/N");
         bool isIrregular = Console.ReadLine().ToLower() == "y";
+       
         if (isIrregular == false)
         {   
             // User inputs width
@@ -29,19 +30,10 @@ class Program
             Console.WriteLine($"The calculated cost of your flooring is {calculationOfArea}");
 
         }       
-       
+        
         // Verifying if user has triangular floor or a circular floor and then doing calculations for each.
         Console.WriteLine("Do you have a triangle floor? Y/N");
         bool isTriangle = Console.ReadLine().ToLower() == "y";
-        if (isTriangle == false)
-        {
-           Console.Write("Input radius of circular floor: ");
-           decimal radius = decimal.Parse(Console.ReadLine());
-           decimal pi = 3.14159265358979323846m;
-           decimal formulaAreaOfCircle = pi * (radius * radius);
-           decimal calculatedCostOfFlooring = formulaAreaOfCircle * cost;
-           Console.WriteLine($"The cost of your flooring would be: {calculatedCostOfFlooring}");
-        }
         
         Console.Write("Input base of triangular flooring: ");
         int triangularBase = int.Parse(Console.ReadLine());
@@ -49,6 +41,21 @@ class Program
         int triangularHeight = int.Parse(Console.ReadLine());
         double formulaAreaOfTriangle = .5 * (triangularBase * triangularHeight);
 
+        if (isTriangle == false)
+        {
+            Console.Write("Input radius of circular floor: ");
+            decimal radius = decimal.Parse(Console.ReadLine());
+            decimal pi = 3.14159265358979323846m;
+            decimal formulaAreaOfCircle = pi * (radius * radius);
+            decimal calculatedCostOfFlooring = formulaAreaOfCircle * cost;
+            Console.WriteLine($"The cost of your flooring would be: {calculatedCostOfFlooring}");
+        }
+
+        
+    
+       
+       
+        
         /* So I have tried decimal to get more of a precise calculation.
         I believe that would be the correct route to go since we are working with cost.
         What could I add to make the finished calculation more in a standard currency amount with only 2 placements after the decimal? */   

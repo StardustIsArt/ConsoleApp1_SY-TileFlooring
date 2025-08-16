@@ -12,3 +12,4 @@
 /Users/samanthayocius/RiderProjects/ConsoleApp1_SY/ConsoleApp1_SY/obj/Debug/net8.0/ConsoleApp1_SY.pdb
 /Users/samanthayocius/RiderProjects/ConsoleApp1_SY/ConsoleApp1_SY/obj/Debug/net8.0/ConsoleApp1_SY.genruntimeconfig.cache
 /Users/samanthayocius/RiderProjects/ConsoleApp1_SY/ConsoleApp1_SY/obj/Debug/net8.0/ref/ConsoleApp1_SY.dll
+/Users/samanthayocius/RiderProjects/ConsoleApp1_SY/ConsoleApp1_SY/obj/Debug/net8.0/ConsoleApp1_SY.sourcelink.json
