@@ -11,6 +11,9 @@ class Program
         Console.Write("Enter the cost of one unit of flooring: $");
         decimal cost = decimal.Parse(Console.ReadLine());
         
+        const decimal yardsPerHour = 20;
+        const decimal hourlyRate = 86.00M;
+        
         // Asking user on floor plan
         Console.Write("What is the shape of your room? square | triangular | circular\n");
         string roomShape = Console.ReadLine();
@@ -28,11 +31,12 @@ class Program
             Console.Write("Enter the length needed: ");
             decimal unitLength = decimal.Parse(Console.ReadLine());
             decimal squareFootage = unitWidth * unitLength;
-            
             decimal squareFlooringCost = squareFootage * cost;
+            
             Console.WriteLine($"The cost of your flooring would be: ${squareFlooringCost}");
-            decimal totalHours = squareFootage/20;
-            decimal totalLaborCost = totalHours * 86.00M;
+            decimal totalHours = squareFootage/yardsPerHour;
+            decimal totalLaborCost = totalHours * hourlyRate;
+            
             Console.WriteLine($"The estimated cost of labor for {squareFootage} units of sq. ft. is ${totalLaborCost}");
 
         }
@@ -47,8 +51,8 @@ class Program
             double triangleFlooringCost = triangleFootage * (double)cost;
             
             Console.WriteLine($"The cost of your flooring would be: ${triangleFlooringCost}");
-            double totalHours = triangleFootage / 20;
-            double totalLaborCost = totalHours * 86.00;
+            double totalHours = triangleFootage / (double)yardsPerHour;
+            double totalLaborCost = totalHours * (double)hourlyRate;
             Console.WriteLine($"The estimated cost of labor for {triangleFootage} units of sq. ft. is ${totalLaborCost}");
         }
         if (roomShape == "circular")
@@ -60,8 +64,8 @@ class Program
             decimal circularFlooringCost = circularFootage * cost;
             
             Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
-            decimal totalHours = circularFootage / 20;
-            decimal totalLaborCost = totalHours * 86.00M;
+            decimal totalHours = circularFootage / yardsPerHour;
+            decimal totalLaborCost = totalHours * hourlyRate;
             Console.WriteLine($"The estimated cost of labor for {circularFootage} units of sq. ft. is ${totalLaborCost}");
         }
         
