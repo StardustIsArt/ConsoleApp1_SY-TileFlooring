@@ -11,16 +11,9 @@ class Program
         Console.Write("Enter the cost of one unit of flooring: $");
         decimal cost = decimal.Parse(Console.ReadLine());
         
-        const decimal yardsPerHour = 20;
-        const decimal hourlyRate = 86.00M;
-        
         // Asking user on floor plan
-        Console.Write("What is the shape of your room? square | triangular | circular\n");
+        Console.Write("What is the shape of your room?");
         string roomShape = Console.ReadLine();
-        if (roomShape == null)
-        {
-            Console.WriteLine("You must enter a valid room shape.");
-        }
         if (roomShape == "square")
         {
             // User inputs width
@@ -30,50 +23,35 @@ class Program
             // User inputs length
             Console.Write("Enter the length needed: ");
             decimal unitLength = decimal.Parse(Console.ReadLine());
-            decimal squareFootage = unitWidth * unitLength;
-            decimal squareFlooringCost = squareFootage * cost;
             
-            Console.WriteLine($"The cost of your flooring would be: ${squareFlooringCost}");
-            decimal totalHours = squareFootage/yardsPerHour;
-            decimal totalLaborCost = totalHours * hourlyRate;
-            
-            Console.WriteLine($"The estimated cost of labor for {squareFootage} units of sq. ft. is ${totalLaborCost}");
-
+            // Outputs the calculation of cost needed to purchase enough flooring for area
+            decimal calculationOfArea = unitWidth * unitLength * cost;
+            Console.WriteLine($"The cost of your flooring would be: ${calculationOfArea}");
         }
         if (roomShape == "triangular")
         {
             Console.Write("Input base of triangular flooring: ");
             double triangularBase = double.Parse(Console.ReadLine());
-            
+        
             Console.Write("Input height of triangular flooring: ");
             double triangularHeight = double.Parse(Console.ReadLine());
-            double triangleFootage = .5 * (triangularBase * triangularHeight);
-            double triangleFlooringCost = triangleFootage * (double)cost;
-            
-            Console.WriteLine($"The cost of your flooring would be: ${triangleFlooringCost}");
-            double totalHours = triangleFootage / (double)yardsPerHour;
-            double totalLaborCost = totalHours * (double)hourlyRate;
-            Console.WriteLine($"The estimated cost of labor for {triangleFootage} units of sq. ft. is ${totalLaborCost}");
+            double formulaAreaOfTriangle = .5 * (triangularBase * triangularHeight);
+        
+            Console.WriteLine($"The cost of your flooring would be: ${formulaAreaOfTriangle}");
         }
-        if (roomShape == "circular")
-        {
+        
+        if (roomShape == "circular"){
             Console.Write("Input radius of circular floor: ");
             decimal radius = decimal.Parse(Console.ReadLine());
             decimal pi = 3.14159265358979323846m;
-            decimal circularFootage = pi * (radius * radius);
-            decimal circularFlooringCost = circularFootage * cost;
+            decimal formulaAreaOfCircle = pi * (radius * radius);
+            decimal calculatedCostOfFlooring = formulaAreaOfCircle * cost;
+            Console.WriteLine($"The cost of your flooring would be: ${calculatedCostOfFlooring}");
             
-            Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
-            decimal totalHours = circularFootage / yardsPerHour;
-            decimal totalLaborCost = totalHours * hourlyRate;
-            Console.WriteLine($"The estimated cost of labor for {circularFootage} units of sq. ft. is ${totalLaborCost}");
-        }
-        
-        
-        // for 1 hour the workers can get in 20 sq. ft. of flooring...
-        // how much flooring is there? results of calculations from different flooring shapes.
-        // Is there a way to call the different "(square, triangle, circular)Footage" into a different section?
-        // for every 20 sq. ft. = 1 hr = $86.00 in labor cost. How many hours of labor does it take to finish the flooring?
-        // -> x amount of hours * 86.00 = totalLaborCost
+            /* So I have tried decimal to get more of a precise calculation.
+       I believe that would be the correct route to go since we are working with cost.
+       What could I add to make the finished calculation more in a standard currency amount with only 2 placements after the decimal? */   
+
+       }
     }
 }
