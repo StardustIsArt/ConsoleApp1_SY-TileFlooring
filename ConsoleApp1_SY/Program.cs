@@ -18,16 +18,17 @@ class Program
         // Asking user on floor plan
         Console.Write("What is the shape of your room? square | triangular | circular\n");
         string roomShape = Console.ReadLine();
-        const string TRIANGULAR_SHAPE_TYPE = "triangular";
+        string[] roomShapeInput = ["triangular", "square", "circular"];
+        /*const string TRIANGULAR_SHAPE_TYPE = "triangular";
         const string SQUARE_SHAPE_TYPE = "square";
-        const string CIRCULAR_SHAPE_TYPE = "circular";
+        const string CIRCULAR_SHAPE_TYPE = "circular";*/
         
         if (roomShape == null)
         {
             Console.WriteLine("You must enter a valid room shape.");
         }
         
-        if (roomShape == SQUARE_SHAPE_TYPE)
+        if (roomShape == roomShapeInput[1])
         {
             // User inputs width
             Console.Write("Enter the width needed: ");
@@ -41,7 +42,7 @@ class Program
             decimal squareFlooringCost = squareFootage * cost;
             Console.WriteLine($"The cost of your flooring would be: ${squareFlooringCost}");
             
-            decimal totalHours = squareFlooringCost * YARDS_PER_HOUR;
+           // decimal totalHours = squareFlooringCost * YARDS_PER_HOUR;
             
             decimal TOTAL_HOURS = squareFootage/YARDS_PER_HOUR;
             decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
@@ -53,7 +54,7 @@ class Program
             decimal calculationOfArea = unitWidth * unitLength * cost;
             Console.WriteLine($"The cost of your flooring would be: ${calculationOfArea}");
         }
-        if (roomShape == TRIANGULAR_SHAPE_TYPE)
+        if (roomShape == roomShapeInput[0])
         {
             Console.Write("Input base of triangular flooring: ");
             double triangularBase = double.Parse(Console.ReadLine());
@@ -64,7 +65,7 @@ class Program
             double triangleFlooringCost = triangleFootage * (double)cost;
             
             Console.WriteLine($"The cost of your flooring would be: ${triangleFlooringCost}");
-            double totalHours = triangleFootage / (double)YARDS_PER_HOUR;
+           // double totalHours = triangleFootage / (double)YARDS_PER_HOUR;
             
             decimal TOTAL_HOURS = (decimal)triangleFootage/YARDS_PER_HOUR;
             decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
@@ -72,7 +73,7 @@ class Program
             Console.WriteLine($"The estimated cost of labor for {triangleFootage} units of sq. ft. is ${totalLaborCost}");
         }
         
-        if (roomShape == CIRCULAR_SHAPE_TYPE){
+        if (roomShape == roomShapeInput[2]){
             Console.Write("Input radius of circular floor: ");
             decimal radius = decimal.Parse(Console.ReadLine());
             decimal pi = 3.14159265358979323846m;
