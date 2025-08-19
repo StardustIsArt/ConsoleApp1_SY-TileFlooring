@@ -40,9 +40,6 @@ class Program
            // decimal TOTAL_HOURS = area/YARDS_PER_HOUR;
             //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
            // Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
-            // Outputs the calculation of cost needed to purchase enough flooring for area
-            decimal calculationOfArea = unitWidth * unitLength * cost;
-            Console.WriteLine($"The cost of your flooring would be: ${calculationOfArea}");
         }
         
         if (roomShape == roomShapeInput[0]) {
