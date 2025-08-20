@@ -20,11 +20,6 @@ class Program
         const string SQUARE_SHAPE_TYPE = "square";
         const string CIRCULAR_SHAPE_TYPE = "circular";*/
         
-        if (roomShape == null) {
-            Console.WriteLine("You must enter a valid room shape.");
-            return;
-        }
-        
         if (roomShape == roomShapeInput[0]) {
             // User inputs width
             Console.Write("Enter the width needed: ");
@@ -38,7 +33,7 @@ class Program
             // decimal totalHours = squareFlooringCost * YARDS_PER_HOUR;
             // decimal TOTAL_HOURS = area/YARDS_PER_HOUR;
             //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
-            // Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
+            //Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
         }
 
         if (roomShape == roomShapeInput[1]) {
@@ -65,6 +60,12 @@ class Program
           //  decimal TOTAL_HOURS = area/YARDS_PER_HOUR;
             //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
         }
+        if (roomShape != "square" | roomShape != "triangular" | roomShape != "circular") {
+            Console.WriteLine("You must enter a valid room shape.");
+            return;
+            // I need the program to stop if user inputs "test" and read line Console.WriteLine("You must enter a valid room shape.");
+        }
+        
         decimal totalHours = area/YARDS_PER_HOUR;
         decimal totalLaborCost = totalHours * HOURLY_RATE;
         Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
