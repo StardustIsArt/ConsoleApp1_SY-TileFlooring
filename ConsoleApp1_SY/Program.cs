@@ -16,7 +16,7 @@ class Program
         Console.Write("What is the shape of your room? square | triangular | circular\n");
         string roomShape = Console.ReadLine();
         string[] roomShapeInput = ["square", "triangular", "circular"];
-        if (roomShape != roomShapeInput[0] || roomShape != roomShapeInput[1] || roomShape != roomShapeInput[2])
+        if (roomShape != roomShapeInput[0] && roomShape != roomShapeInput[1] && roomShape != roomShapeInput[2])
         {
             Console.WriteLine("You must enter a valid room shape.");
         } //figure out how to make this stop from executing if the user has correct shape input
