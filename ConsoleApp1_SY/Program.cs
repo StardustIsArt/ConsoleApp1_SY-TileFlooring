@@ -16,6 +16,10 @@ class Program
         Console.Write("What is the shape of your room? square | triangular | circular\n");
         string roomShape = Console.ReadLine();
         string[] roomShapeInput = ["square", "triangular", "circular"];
+        if (roomShape != roomShapeInput[0] || roomShape != roomShapeInput[1] || roomShape != roomShapeInput[2])
+        {
+            Console.WriteLine("You must enter a valid room shape.");
+        } //figure out how to make this stop from executing if the user has correct shape input
         
         if (roomShape == roomShapeInput[0]) {
             // User inputs width
@@ -47,14 +51,13 @@ class Program
             decimal circularFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
         }
-        if (roomShape != "square" | roomShape != "triangular" | roomShape != "circular") {
-            Console.WriteLine("You must enter a valid room shape.");
-            return;
-            // I need the program to stop if user inputs "test" and read line Console.WriteLine("You must enter a valid room shape.");
-        }
+       
         
         decimal totalHours = area/YARDS_PER_HOUR;
         decimal totalLaborCost = totalHours * HOURLY_RATE;
         Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
+        
+      
+
     }
 }
