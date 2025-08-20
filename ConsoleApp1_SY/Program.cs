@@ -16,9 +16,6 @@ class Program
         Console.Write("What is the shape of your room? square | triangular | circular\n");
         string roomShape = Console.ReadLine();
         string[] roomShapeInput = ["square", "triangular", "circular"];
-        /*const string TRIANGULAR_SHAPE_TYPE = "triangular";
-        const string SQUARE_SHAPE_TYPE = "square";
-        const string CIRCULAR_SHAPE_TYPE = "circular";*/
         
         if (roomShape == roomShapeInput[0]) {
             // User inputs width
@@ -30,10 +27,6 @@ class Program
             area = unitWidth * unitLength;
             decimal squareFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${squareFlooringCost}");
-            // decimal totalHours = squareFlooringCost * YARDS_PER_HOUR;
-            // decimal TOTAL_HOURS = area/YARDS_PER_HOUR;
-            //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
-            //Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
         }
 
         if (roomShape == roomShapeInput[1]) {
@@ -44,10 +37,6 @@ class Program
             area = (decimal)(.5 * (triangularBase * triangularHeight));
             decimal triangleFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${triangleFlooringCost}");
-            // double totalHours = triangleFootage / (double)YARDS_PER_HOUR;
-            // decimal TOTAL_HOURS = (decimal)area/YARDS_PER_HOUR;
-            //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
-            //Console.WriteLine($"The estimated cost of labor for {area} units of sq. ft. is ${totalLaborCost}");
         }
         
         if (roomShape == roomShapeInput[2]){
@@ -57,8 +46,6 @@ class Program
             area = pi * (radius * radius);
             decimal circularFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
-          //  decimal TOTAL_HOURS = area/YARDS_PER_HOUR;
-            //decimal totalLaborCost = TOTAL_HOURS * HOURLY_RATE;
         }
         if (roomShape != "square" | roomShape != "triangular" | roomShape != "circular") {
             Console.WriteLine("You must enter a valid room shape.");
