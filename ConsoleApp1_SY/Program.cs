@@ -22,6 +22,7 @@ class Program
         
         if (roomShape == null) {
             Console.WriteLine("You must enter a valid room shape.");
+            return;
         }
         
         if (roomShape == roomShapeInput[0]) {
@@ -31,7 +32,7 @@ class Program
             // User inputs length
             Console.Write("Enter the length needed: ");
             decimal unitLength = decimal.Parse(Console.ReadLine());
-            decimal area = unitWidth * unitLength;
+            area = unitWidth * unitLength;
             decimal squareFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${squareFlooringCost}");
             // decimal totalHours = squareFlooringCost * YARDS_PER_HOUR;
@@ -45,8 +46,8 @@ class Program
             double triangularBase = double.Parse(Console.ReadLine());
             Console.Write("Input height of triangular flooring: ");
             double triangularHeight = double.Parse(Console.ReadLine());
-            double area = .5 * (triangularBase * triangularHeight);
-            double triangleFlooringCost = area * (double)cost;
+            area = (decimal)(.5 * (triangularBase * triangularHeight));
+            decimal triangleFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${triangleFlooringCost}");
             // double totalHours = triangleFootage / (double)YARDS_PER_HOUR;
             // decimal TOTAL_HOURS = (decimal)area/YARDS_PER_HOUR;
