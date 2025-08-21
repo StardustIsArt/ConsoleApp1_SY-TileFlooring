@@ -18,6 +18,7 @@ class Program
         string[] roomShapeInput = ["square", "triangular", "circular"];
         if (roomShape != roomShapeInput[0] && roomShape != roomShapeInput[1] && roomShape != roomShapeInput[2]) {
             Console.WriteLine("You must enter a valid room shape.");
+            return;
         } 
         
         if (roomShape == roomShapeInput[0]) {
