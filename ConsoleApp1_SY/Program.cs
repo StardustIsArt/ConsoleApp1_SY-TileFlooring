@@ -45,8 +45,8 @@ class Program
         if (roomShape == roomShapeInput[2]){
             Console.Write("Input radius of circular floor: ");
             decimal radius = decimal.Parse(Console.ReadLine());
-            double pi = Math.PI;
-            area = (decimal)pi * (radius * radius);
+           // double pi = Math.PI;
+            area = (decimal)(Math.PI * (double)(radius * radius));
             decimal circularFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
         }
