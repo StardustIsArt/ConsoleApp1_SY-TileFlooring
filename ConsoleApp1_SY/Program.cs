@@ -18,7 +18,7 @@ class Program
         string[] roomShapeInput = ["square", "triangular", "circular"];
         if (roomShape != roomShapeInput[0] && roomShape != roomShapeInput[1] && roomShape != roomShapeInput[2]) {
             Console.WriteLine("You must enter a valid room shape.");
-        } //figure out how to make this stop from executing if the user has correct shape input
+        } 
         
         if (roomShape == roomShapeInput[0]) {
             // User inputs width
@@ -45,8 +45,8 @@ class Program
         if (roomShape == roomShapeInput[2]){
             Console.Write("Input radius of circular floor: ");
             decimal radius = decimal.Parse(Console.ReadLine());
-            decimal pi = 3.14159265358979323846m;
-            area = pi * (radius * radius);
+            double pi = Math.PI;
+            area = (decimal)pi * (radius * radius);
             decimal circularFlooringCost = area * cost;
             Console.WriteLine($"The cost of your flooring would be: ${circularFlooringCost}");
         }
